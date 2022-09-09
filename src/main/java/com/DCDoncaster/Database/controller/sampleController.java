@@ -1,9 +1,14 @@
 package com.DCDoncaster.Database.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.DCDoncaster.Database.model.sampleModel;
 import com.DCDoncaster.Database.service.sampleService;
@@ -16,20 +21,29 @@ public class sampleController {
     @Autowired
     sampleService sampleservice;
 
-    @RequestMapping(value="/", method=RequestMethod.POST)
-    public sampleModel createsampleModel(@RequestBody sampleModel data) {
+    @RequestMapping(value="/create", method=RequestMethod.POST)
+    public sampleModel createSampleModel(@RequestBody sampleModel data) {
         return sampleservice.createsampleModel(data);
     }
 
-    @RequestMapping(value="/", method=RequestMethod.GET)
-    public List<sampleModel> readsampleModel(){
-        return sampleservice.readsampleModel();
+    @RequestMapping(value="/read", method=RequestMethod.GET)
+    public List<sampleModel> readSampleModel(){
+        return sampleservice.getsampleModel();
     }
 
-    @RequestMapping(value="/character/{id}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/read/{id}", method=RequestMethod.GET)
+    public Optional<sampleModel> readSampleModelSingle(@PathVariable(value = "id") Long id){
+       return sampleservice.getsampleModelSingle(id);
+    }
+
+    @RequestMapping(value="/update/{id}", method=RequestMethod.PUT)
+    public sampleModel updateSampleModel(@PathVariable(value = "id") Long id, @RequestBody sampleModel dataupdate){
+        return sampleservice.updateSampleModel(id, dataupdate);
+    }
+
+    @RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
     public void deleteCharacter(@PathVariable(value = "id") Long id){
         sampleservice.deleteCharacter(id);
     }
-
 
 }

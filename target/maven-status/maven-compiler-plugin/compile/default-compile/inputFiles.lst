@@ -1,5 +1,5 @@
-/Users/cdga/Desktop/Database/src/main/java/com/DCDoncaster/Database/DatabaseApplication.java
-/Users/cdga/Desktop/Database/src/main/java/com/DCDoncaster/Database/model/sampleModel.java
-/Users/cdga/Desktop/Database/src/main/java/com/DCDoncaster/Database/controller/sampleController.java
-/Users/cdga/Desktop/Database/src/main/java/com/DCDoncaster/Database/repository/sampleRepository.java
-/Users/cdga/Desktop/Database/src/main/java/com/DCDoncaster/Database/service/sampleService.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/DatabaseApplication.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/service/sampleService.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/repository/sampleRepository.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/controller/sampleController.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/model/sampleModel.java

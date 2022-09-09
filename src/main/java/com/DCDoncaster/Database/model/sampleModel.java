@@ -20,11 +20,11 @@ public class sampleModel {
     @Column(name="charactername")
     private String charactername;
 
-    @Column(name="charactertpe")
-    private String charactertpe;
+    @Column(name="charactertype")
+    private String charactertype;
 
     //right click and generate getters and setters for each
-    //Charactertpe is a typo but due to schema being setup wrong on mySQL! Don't Change it
+    //Charactertype is a typo but due to schema being setup wrong on mySQL! Don't Change it
 
     public Long getId() {
         return id;
@@ -42,11 +42,11 @@ public class sampleModel {
         this.charactername = charactername;
     }
 
-    public String getCharactertpe() {
-        return charactertpe;
+    public String getCharactertype() {
+        return charactertype;
     }
 
-    public void setCharactertpe(String charactertpe) {
-        this.charactertpe = charactertpe;
+    public void setCharactertype(String charactertype) {
+        this.charactertype = charactertype;
     }
 }
