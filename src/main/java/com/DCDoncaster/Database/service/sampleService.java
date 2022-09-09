@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.DCDoncaster.Database.model.sampleModel;
 import com.DCDoncaster.Database.repository.sampleRepository;
 
+import java.util.List;
 
 @Service
 public class sampleService {
@@ -16,5 +17,7 @@ public class sampleService {
     public sampleModel createsampleModel(sampleModel info){
         return samplerepository.save(info);
     }
+   public List<sampleModel> readsampleModel(){return samplerepository.findAll();}
+   }
 
-}
+

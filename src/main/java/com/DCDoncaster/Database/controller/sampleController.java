@@ -1,10 +1,9 @@
 package com.DCDoncaster.Database.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.DCDoncaster.Database.model.sampleModel;
 import com.DCDoncaster.Database.service.sampleService;
@@ -17,8 +16,13 @@ public class sampleController {
     @Autowired
     sampleService sampleservice;
 
-    @RequestMapping(value="/create", method=RequestMethod.POST)
+    @RequestMapping(value="/", method=RequestMethod.POST)
     public sampleModel createsampleModel(@RequestBody sampleModel data) {
         return sampleservice.createsampleModel(data);
+    }
+
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public List<sampleModel> readsampleModel(){
+        return sampleservice.readsampleModel();
     }
 }

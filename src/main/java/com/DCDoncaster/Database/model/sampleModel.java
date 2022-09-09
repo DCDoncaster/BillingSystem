@@ -24,6 +24,7 @@ public class sampleModel {
     private String charactertpe;
 
     //right click and generate getters and setters for each
+    //Charactertpe is a typo but due to schema being setup wrong on mySQL! Don't Change it
 
     public Long getId() {
         return id;
