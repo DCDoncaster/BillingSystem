@@ -25,4 +25,11 @@ public class sampleController {
     public List<sampleModel> readsampleModel(){
         return sampleservice.readsampleModel();
     }
+
+    @RequestMapping(value="/character/{id}", method=RequestMethod.DELETE)
+    public void deleteCharacter(@PathVariable(value = "id") Long id){
+        sampleservice.deleteCharacter(id);
+    }
+
+
 }

@@ -18,6 +18,11 @@ public class sampleService {
         return samplerepository.save(info);
     }
    public List<sampleModel> readsampleModel(){return samplerepository.findAll();}
+
+    public void deleteCharacter(Long id){
+        samplerepository.deleteById(id);
+    }
+
    }
 
 
