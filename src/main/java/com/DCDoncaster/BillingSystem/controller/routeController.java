@@ -16,7 +16,7 @@ import com.DCDoncaster.BillingSystem.service.sampleService;
 
 @RestController
 @RequestMapping("/api")
-public class sampleController {
+public class routeController {
 
     @Autowired
     sampleService sampleservice;

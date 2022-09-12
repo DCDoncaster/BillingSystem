@@ -9,22 +9,28 @@ import javax.persistence.Table;
 
 //This all tells it which database and in turn table to reference
 @Entity
-@Table(name = "characterdetails")   //TODO Pick a useful name
+@Table(name = "accountdetails")
 public class sampleModel {
 
     @Id //sets next item as primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idcharacterdetails") //TODO Pick a useful name/change based on MySQLs stuff
+    @Column(name="idaccount") //TODO Make sure this matches primary key in MYSQL
     private Long id;
 
-    @Column(name="charactername")
-    private String charactername;
+    @Column(name="email")
+    private String email;
 
-    @Column(name="charactertype")
-    private String charactertype;
+    @Column(name="password")
+    private String password;
 
-    //right click and generate getters and setters for each
-    //Charactertype is a typo but due to schema being setup wrong on mySQL! Don't Change it
+    @Column(name="fullname")
+    private String fullname;
+
+    @Column(name="outstandingbalance")
+    private Double outstandingbalance;
+
+//generate getters and setters here if/when needed
+
 
     public Long getId() {
         return id;
@@ -34,19 +40,35 @@ public class sampleModel {
         this.id = id;
     }
 
-    public String getCharactername() {
-        return charactername;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCharactername(String charactername) {
-        this.charactername = charactername;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getCharactertype() {
-        return charactertype;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCharactertype(String charactertype) {
-        this.charactertype = charactertype;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public Double getOutstandingbalance() {
+        return outstandingbalance;
+    }
+
+    public void setOutstandingbalance(Double outstandingbalance) {
+        this.outstandingbalance = outstandingbalance;
     }
 }

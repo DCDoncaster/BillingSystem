@@ -24,8 +24,10 @@ public class sampleService {
 
     public sampleModel updateSampleModel(Long id, sampleModel dataupdate){
         sampleModel existingdata = samplerepository.findById(id).get();
-        existingdata.setCharactername(dataupdate.getCharactername());
-        existingdata.setCharactertype(dataupdate.getCharactertype());
+        existingdata.setEmail(dataupdate.getEmail());
+        existingdata.setPassword(dataupdate.getPassword());
+        existingdata.setFullname(dataupdate.getFullname());
+        existingdata.setOutstandingbalance(dataupdate.getOutstandingbalance());
         return samplerepository.save(existingdata);
 }
 

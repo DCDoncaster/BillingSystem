@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.DCDoncaster</groupId>
-	<artifactId>Database</artifactId>
+	<artifactId>BillingSystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Database</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Billing System Project</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
