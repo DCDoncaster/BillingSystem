@@ -1,4 +1,4 @@
-package com.DCDoncaster.Database.model;
+package com.DCDoncaster.BillingSystem.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

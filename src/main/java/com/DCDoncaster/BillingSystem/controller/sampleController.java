@@ -1,4 +1,4 @@
-package com.DCDoncaster.Database.controller;
+package com.DCDoncaster.BillingSystem.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.DCDoncaster.Database.model.sampleModel;
-import com.DCDoncaster.Database.service.sampleService;
+import com.DCDoncaster.BillingSystem.model.sampleModel;
+import com.DCDoncaster.BillingSystem.service.sampleService;
 
 
 @RestController

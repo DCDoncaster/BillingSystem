@@ -1,5 +1,5 @@
-/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/DatabaseApplication.java
-/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/service/sampleService.java
-/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/repository/sampleRepository.java
-/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/controller/sampleController.java
-/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/Database/model/sampleModel.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/BillingSystem/BillingSystem.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/BillingSystem/repository/sampleRepository.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/BillingSystem/controller/sampleController.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/BillingSystem/model/sampleModel.java
+/Users/cdga/JavaRepos/DatabaseModel/src/main/java/com/DCDoncaster/BillingSystem/service/sampleService.java

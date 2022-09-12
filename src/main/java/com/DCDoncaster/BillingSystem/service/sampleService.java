@@ -1,10 +1,10 @@
-package com.DCDoncaster.Database.service;
+package com.DCDoncaster.BillingSystem.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.DCDoncaster.Database.model.sampleModel;
-import com.DCDoncaster.Database.repository.sampleRepository;
+import com.DCDoncaster.BillingSystem.model.sampleModel;
+import com.DCDoncaster.BillingSystem.repository.sampleRepository;
 
 import java.util.List;
 import java.util.Optional;
