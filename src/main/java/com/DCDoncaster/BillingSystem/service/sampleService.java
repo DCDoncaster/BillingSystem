@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DCDoncaster.BillingSystem.model.sampleModel;
+
 import com.DCDoncaster.BillingSystem.repository.sampleRepository;
 
 import java.util.List;
@@ -15,9 +16,10 @@ public class sampleService {
     @Autowired
     sampleRepository samplerepository;
 
-    public sampleModel createsampleModel(sampleModel info){
-        return samplerepository.save(info);
-    }
+    //create user
+    public sampleModel createsampleModel(sampleModel info){return samplerepository.save(info);    }
+
+
     public List<sampleModel> getsampleModel(){return samplerepository.findAll();}
 
     public Optional<sampleModel> getsampleModelSingle(long id){return samplerepository.findById(id);}

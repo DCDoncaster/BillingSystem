@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DCDoncaster.BillingSystem.model.sampleModel;
+import com.DCDoncaster.BillingSystem.model.usageModel;
 import com.DCDoncaster.BillingSystem.service.sampleService;
+import com.DCDoncaster.BillingSystem.service.usageService;
 
 
 @RestController
@@ -21,9 +23,16 @@ public class routeController {
     @Autowired
     sampleService sampleservice;
 
+    @Autowired
+    usageService usageservice;
+
+    @RequestMapping(value="/submit", method=RequestMethod.POST)
+    public usageModel createUsageModel(@RequestBody usageModel data) {
+    return usageservice.createUsageModel(data);
+    }
+
     @RequestMapping(value="/create", method=RequestMethod.POST)
-    public sampleModel createSampleModel(@RequestBody sampleModel data) {
-        return sampleservice.createsampleModel(data);
+    public sampleModel createSampleModel(@RequestBody sampleModel data) {return sampleservice.createsampleModel(data);
     }
 
     @RequestMapping(value="/read", method=RequestMethod.GET)
