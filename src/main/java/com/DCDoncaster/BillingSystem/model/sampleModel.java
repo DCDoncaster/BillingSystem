@@ -14,7 +14,7 @@ public class sampleModel {
 
     @Id //sets next item as primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idaccount") //TODO Make sure this matches primary key in MYSQL
+    @Column(name="accountid") //DONE Make sure this matches primary key in MYSQL
     private Long id;
 
     @Column(name="email")
@@ -29,8 +29,19 @@ public class sampleModel {
     @Column(name="outstandingbalance")
     private Double outstandingbalance;
 
+    @Column(name="lastreading")
+    private Integer lastreading;
+
 //generate getters and setters here if/when needed
 
+
+    public Integer getLastreading() {
+        return lastreading;
+    }
+
+    public void setLastreading(Integer lastreading) {
+        this.lastreading = lastreading;
+    }
 
     public Long getId() {
         return id;
