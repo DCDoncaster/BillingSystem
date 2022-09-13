@@ -1,6 +1,5 @@
 com/DCDoncaster/BillingSystem/controller/usageController.class
 com/DCDoncaster/BillingSystem/model/sampleModel.class
-com/DCDoncaster/BillingSystem/service/sampleService.class
 com/DCDoncaster/BillingSystem/repository/sampleRepository.class
 com/DCDoncaster/BillingSystem/repository/usageRepository.class
 com/DCDoncaster/BillingSystem/BillingSystem.class
