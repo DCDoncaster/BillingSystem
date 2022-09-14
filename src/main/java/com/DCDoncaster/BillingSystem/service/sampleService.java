@@ -20,7 +20,6 @@ public class sampleService {
     //create user
     public sampleModel createsampleModel(sampleModel info){return samplerepository.save(info);    }
 
-
     public List<sampleModel> getsampleModel(){return samplerepository.findAll();}
 
     public Optional<sampleModel> getsampleModelSingle(long id){return samplerepository.findById(id);}
@@ -31,24 +30,24 @@ public class sampleService {
         if(!Objects.isNull(dataupdate.getEmail())) {existingdata.setEmail(dataupdate.getEmail());};
         if(!Objects.isNull(dataupdate.getPassword())) {existingdata.setPassword(dataupdate.getPassword());};
         if(!Objects.isNull(dataupdate.getFullname())) {existingdata.setFullname(dataupdate.getFullname());};
-        if(!Objects.isNull(dataupdate.getOutstandingbalance())) {existingdata.setOutstandingbalance(dataupdate.getOutstandingbalance());};
         if(!Objects.isNull(dataupdate.getLastreading())) {
             //update outstanding balance
             double newCharge = (unitRate * (dataupdate.getLastreading() - existingdata.getLastreading()));
-            System.out.println(newCharge);
-            existingdata.setOutstandingbalance(existingdata.getOutstandingbalance()+newCharge);
+            double existingBalance = existingdata.getOutstandingbalance();
+            existingdata.setOutstandingbalance(newCharge + existingBalance);
             existingdata.setLastreading(dataupdate.getLastreading());
         };
         return samplerepository.save(existingdata);
 }
 //Delete Account but only if the outstanding balance is set at 0 - if below 0 shoudl trigger a method to issue a refund for the customer.
-    public void deleteUser(Long id){
+    public void deleteUser(Long id, sampleModel deleteData){
         sampleModel useraccount = samplerepository.findById(id).get();
-        if(useraccount.getOutstandingbalance() == 0){
-        samplerepository.deleteById(id);}
+        if(useraccount.getOutstandingbalance() <= 5){
+            System.out.println(useraccount.getEmail());
+            System.out.println(deleteData.getEmail());
+            if (useraccount.getEmail().equals(deleteData.getEmail())){
 
-
-
+        samplerepository.deleteById(id);}}
     }
 
 

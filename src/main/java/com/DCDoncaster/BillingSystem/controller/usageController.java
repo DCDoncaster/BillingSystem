@@ -16,7 +16,7 @@ import com.DCDoncaster.BillingSystem.model.usageModel;
 import com.DCDoncaster.BillingSystem.service.usageService;
 
 import java.util.Optional;
-
+import java.util.List;
 
 
 @RestController
@@ -31,8 +31,13 @@ public class usageController {
         return usageservice.createUsageModel(data);
     }
 
-    @RequestMapping(value="/checkusage/{id}", method=RequestMethod.GET)
-    public Optional<usageModel> getUsageofUser(@PathVariable(value = "id") Long id){
-        return usageservice.getUsageofUser(id);
+    @RequestMapping(value="/checkusage/{accountnumber}", method=RequestMethod.GET)
+    public Optional<usageModel> getUsageofUser(@PathVariable(value = "accountnumber") String accountnumber){
+        return usageservice.getUsageofUser(accountnumber);
+    }
+
+    @RequestMapping(value="/checkusage/all/{accountnumber}", method=RequestMethod.GET)
+    public List<usageModel> getAllReadings(@PathVariable(value="accountnumber") String accountnumber){
+        return usageservice.getAllReadings(accountnumber);
     }
 }

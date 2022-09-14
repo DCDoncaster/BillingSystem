@@ -24,8 +24,8 @@ public class usageModel {
     @Column(name="idreadings")
     private Long id;
 
-    @Column(name="useremail")
-    private String useremail;
+    @Column(name="accountnumber")
+    private String accountnumber;
 
     @Column(name="reading")
     private String reading;
@@ -41,12 +41,12 @@ public class usageModel {
         this.id = id;
     }
 
-    public String getUseremail() {
-        return useremail;
+    public String getAccountnumber() {
+        return accountnumber;
     }
 
-    public void setUseremail(String useremail) {
-        this.useremail = useremail;
+    public void setAccountnumber(String accountnumber) {
+        this.accountnumber = accountnumber;
     }
 
     public String getReading() {

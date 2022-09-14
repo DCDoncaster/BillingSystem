@@ -13,7 +13,7 @@ import com.DCDoncaster.BillingSystem.service.sampleService;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/user")
 public class routeController {
 
     @Autowired
@@ -34,9 +34,6 @@ public class routeController {
        return sampleservice.getsampleModelSingle(id);
     }
 
-//    @RequestMapping(value="/os/{id}", method=RequestMethod.GET)
-    //build object here to return last reading and o/s based on account ID
-
     //Updates all details on a user based on the given ID
     @RequestMapping(value="/update/{id}", method=RequestMethod.PUT)
     public sampleModel updateSampleModel(@PathVariable(value = "id") Long id, @RequestBody sampleModel dataupdate){
@@ -45,8 +42,8 @@ public class routeController {
 
     //Deletes a user
     @RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
-    public void deleteUser(@PathVariable(value = "id") Long id){
-        sampleservice.deleteUser(id);
+    public void deleteUser(@PathVariable(value = "id") Long id, @RequestBody sampleModel deleteData){
+        sampleservice.deleteUser(id, deleteData);
     }
 
 
