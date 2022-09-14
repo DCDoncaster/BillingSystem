@@ -10,4 +10,5 @@ import java.util.List;
 public interface usageRepository extends JpaRepository<usageModel, Long> {
     Optional<usageModel> findByaccountnumber(String accountnumber);
     List<usageModel> findAllByaccountnumber(String accountnumber);
+    List<usageModel> findAllByDate(String date);
 }

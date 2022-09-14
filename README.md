@@ -18,7 +18,7 @@ Forked from a self built database to create a billing system suitable for a smal
 * /user/read/id - **GET**
   * When provided with the customers unique account number as a whole number integer will provide account information for that customers account only.
 
-* /user/read/email
+
 
 * /user/update/id - **PUT**
   * Accepts the below arguments as a PUT request in order to update them in the database. Any arguments not provided will not be adjusted or updated
@@ -30,4 +30,4 @@ Forked from a self built database to create a billing system suitable for a smal
     
 * /user/delete/id - **DELETE**
   * Accepts customers email as a JSON object and if this matches the one on the file and the customers outstanding balance is equal to or under £5 will delete the customers account permanently.
-  * This is non reversible. 
+  * This is non-reversible. 

@@ -22,5 +22,9 @@ public class usageService {
 
     public List<usageModel> getAllReadings(String accountnumber){
         return usagerepository.findAllByaccountnumber(accountnumber);}
-    }
 
+
+
+    public List<usageModel> getReadingsByDate(String date){
+        return usagerepository.findAllByDate(date);}
+}
