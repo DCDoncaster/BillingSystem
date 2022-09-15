@@ -1,11 +1,11 @@
 package com.DCDoncaster.BillingSystem.service;
 
-import com.DCDoncaster.BillingSystem.model.usageModel;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.DCDoncaster.BillingSystem.model.sampleModel;
 import com.DCDoncaster.BillingSystem.repository.sampleRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,8 +24,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.Objects;
-
-
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;

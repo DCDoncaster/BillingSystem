@@ -14,7 +14,7 @@ Forked from a self built database to create a billing system suitable for a smal
 
 
 * /user/read - **GET**
-  * Provides a list of all users as a raw database extract - no paramters are required for this request
+  * Provides a list of all users as a raw database extract - no parameters are required for this request
 * /user/read/id - **GET**
   * When provided with the customers unique account number as a whole number integer will provide account information for that customers account only.
 

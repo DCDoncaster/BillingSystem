@@ -1,13 +1,10 @@
 package com.DCDoncaster.BillingSystem.service;
-
+import com.DCDoncaster.BillingSystem.model.usageModel;
+import com.DCDoncaster.BillingSystem.repository.usageRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.DCDoncaster.BillingSystem.model.usageModel;
-import com.DCDoncaster.BillingSystem.repository.usageRepository;
-
-import java.util.Optional;
 import java.util.List;
 
 
@@ -20,8 +17,6 @@ public class usageService {
 
     public List<usageModel> getAllReadings(String accountnumber){
         return usagerepository.findAllByaccountnumber(accountnumber);}
-
-
 
     public List<usageModel> getReadingsByDate(String date){
         return usagerepository.findAllByDate(date);}

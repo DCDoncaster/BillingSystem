@@ -2,7 +2,7 @@ package com.DCDoncaster.BillingSystem.controller;
 
 
 
-import com.DCDoncaster.BillingSystem.model.sampleModel;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +15,7 @@ import com.DCDoncaster.BillingSystem.model.usageModel;
 
 import com.DCDoncaster.BillingSystem.service.usageService;
 
-import java.util.Optional;
+
 import java.util.List;
 
 
@@ -40,7 +40,7 @@ public class usageController {
     }
 
     //gets all readings based on date
-    @RequestMapping(value="/checkusage/{date}", method=RequestMethod.GET)
+    @RequestMapping(value="/checkusageondate/{date}", method=RequestMethod.GET)
     public List<usageModel> getReadingsByDate(@PathVariable(value="date") String date){
         return usageservice.getReadingsByDate(date);
     }
