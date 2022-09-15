@@ -18,8 +18,7 @@ Forked from a self built database to create a billing system suitable for a smal
 * /user/read/id - **GET**
   * When provided with the customers unique account number as a whole number integer will provide account information for that customers account only.
 
-
-
+  
 * /user/update/id - **PUT**
   * Accepts the below arguments as a PUT request in order to update them in the database. Any arguments not provided will not be adjusted or updated
     * email: a string representing the customers email address in full
@@ -29,7 +28,6 @@ Forked from a self built database to create a billing system suitable for a smal
     * lastreading: provided as a whole number integer - this will trigger an update of the reading held on the customers file and also update their account balance.The customer will also receive a text message if we hold a number on file for them to confirm their up to date balance
       * If a reading is provided this will also updated into the readings table with todays date and the customers account number
       * When a new balance is calculated the customer will also be sent a notification of their new balance by SMS Text Message provided that a valid mobile number exists in their account.
-      
     
     
 * /user/delete/id - **DELETE**
@@ -51,4 +49,4 @@ Forked from a self built database to create a billing system suitable for a smal
 
 * /readings/checkusageondate/{date} - **GET**
   * Usable to search by date (dates to be provided in YYYY-MM-DD format) - This will retrieve any readings submitted by any user ont hat date.
-  * 
+  
