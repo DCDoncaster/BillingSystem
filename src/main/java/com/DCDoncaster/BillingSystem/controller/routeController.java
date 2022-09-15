@@ -4,6 +4,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
+import com.DCDoncaster.BillingSystem.model.usageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,8 @@ public class routeController {
        return sampleservice.getsampleModelSingle(id);
     }
 
+
+
     //Updates all details on a user based on the given ID
     @RequestMapping(value="/update/{id}", method=RequestMethod.PUT)
     public sampleModel updateSampleModel(@PathVariable(value = "id") Long id, @RequestBody sampleModel dataupdate) throws URISyntaxException {
@@ -46,7 +49,4 @@ public class routeController {
     public void deleteUser(@PathVariable(value = "id") Long id, @RequestBody sampleModel deleteData){
         sampleservice.deleteUser(id, deleteData);
     }
-
-
-
 }

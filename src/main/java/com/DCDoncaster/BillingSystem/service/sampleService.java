@@ -1,5 +1,6 @@
 package com.DCDoncaster.BillingSystem.service;
 
+import com.DCDoncaster.BillingSystem.model.usageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,10 +50,10 @@ public class sampleService {
     public sampleModel updateSampleModel(Long id, sampleModel dataupdate) throws URISyntaxException {
         //use this to extract a particular value
         sampleModel existingdata = samplerepository.findById(id).get();
-        if(!Objects.isNull(dataupdate.getEmail())) {existingdata.setEmail(dataupdate.getEmail());};
-        if(!Objects.isNull(dataupdate.getPassword())) {existingdata.setPassword(dataupdate.getPassword());};
-        if(!Objects.isNull(dataupdate.getFullname())) {existingdata.setFullname(dataupdate.getFullname());};
-        if(!Objects.isNull(dataupdate.getPhonenumber())) {existingdata.setPhonenumber(dataupdate.getPhonenumber());};
+        if(!Objects.isNull(dataupdate.getEmail())) {existingdata.setEmail(dataupdate.getEmail());}
+        if(!Objects.isNull(dataupdate.getPassword())) {existingdata.setPassword(dataupdate.getPassword());}
+        if(!Objects.isNull(dataupdate.getFullname())) {existingdata.setFullname(dataupdate.getFullname());}
+        if(!Objects.isNull(dataupdate.getPhonenumber())) {existingdata.setPhonenumber(dataupdate.getPhonenumber());}
         if(!Objects.isNull(dataupdate.getLastreading())) {
 
             //update outstanding balance
@@ -93,7 +94,7 @@ public class sampleService {
                     .create();
             System.out.println("SMS Successfully Sent");
             System.out.println(message.getBody());
-        };
+        }
 
         return samplerepository.save(existingdata);
 }
@@ -106,7 +107,6 @@ public class sampleService {
             System.out.println(useraccount.getEmail());
             System.out.println(deleteData.getEmail());
             if (useraccount.getEmail().equals(deleteData.getEmail())){
-
         samplerepository.deleteById(id);}}
     }
 
