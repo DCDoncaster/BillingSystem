@@ -1,5 +1,6 @@
 package com.DCDoncaster.BillingSystem.controller;
 
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +37,7 @@ public class routeController {
 
     //Updates all details on a user based on the given ID
     @RequestMapping(value="/update/{id}", method=RequestMethod.PUT)
-    public sampleModel updateSampleModel(@PathVariable(value = "id") Long id, @RequestBody sampleModel dataupdate){
+    public sampleModel updateSampleModel(@PathVariable(value = "id") Long id, @RequestBody sampleModel dataupdate) throws URISyntaxException {
         return sampleservice.updateSampleModel(id, dataupdate);
     }
 

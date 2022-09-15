@@ -1,5 +1,6 @@
 package com.DCDoncaster.BillingSystem.service;
 
+import com.DCDoncaster.BillingSystem.model.sampleModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class usageService {
     @Autowired
     usageRepository usagerepository;
     public usageModel createUsageModel(usageModel info){return usagerepository.save(info);}
+
 
     public Optional<usageModel> getUsageofUser(String accountnumber){
         return usagerepository.findByaccountnumber(accountnumber);}

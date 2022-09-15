@@ -32,8 +32,18 @@ public class sampleModel {
     @Column(name="lastreading")
     private Integer lastreading;
 
+    @Column(name="phonenumber")
+    private String phonenumber;
 //generate getters and setters here if/when needed
 
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
 
     public Integer getLastreading() {
         return lastreading;

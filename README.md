@@ -10,7 +10,7 @@ Forked from a self built database to create a billing system suitable for a smal
     * fullname: first and last name of the user 
     * lastreading: Sent as a whole number integer. This will not generate any charges and shoudl be used to generate a base line for any future charges
     * outstandingbalance : Should always be set to 0 unless the customer is being provided an opening credit on their account
-    
+    * phonenumber: Should be provided as a String
 
 
 * /user/read - **GET**
@@ -25,8 +25,8 @@ Forked from a self built database to create a billing system suitable for a smal
     * email: a string representing the customers email address in full
     * password: a string with a user defined password of up to 45 characters
     * fullname: first and last name of the user 
-    * lastreading: provided as a whole number integer - this will trigger an update of the reading held on the customers file and also update their account balance.
-    
+    * lastreading: provided as a whole number integer - this will trigger an update of the reading held on the customers file and also update their account balance.The customer will also receive a text message if we hold a number on file for them to confirm their up to date balance
+    * phonenumber: provided as a string
     
 * /user/delete/id - **DELETE**
   * Accepts customers email as a JSON object and if this matches the one on the file and the customers outstanding balance is equal to or under £5 will delete the customers account permanently.
