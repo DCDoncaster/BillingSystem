@@ -4,27 +4,34 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import com.DCDoncaster.BillingSystem.model.usageModel;
+import com.google.gson.Gson;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.http.HttpStatus;
 
 import com.DCDoncaster.BillingSystem.model.sampleModel;
 import com.DCDoncaster.BillingSystem.service.sampleService;
 
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user")
+
 public class routeController {
+
 
     @Autowired
     sampleService sampleservice;
 
 //    Creates New User
+
+
     @RequestMapping(value="/create", method=RequestMethod.POST)
     public sampleModel createSampleModel(@RequestBody sampleModel data) {return sampleservice.createsampleModel(data);
-    }
+
+}
+
 
     //gets all users data regardless of any syntax
     @RequestMapping(value="/read", method=RequestMethod.GET)

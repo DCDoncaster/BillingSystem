@@ -31,7 +31,7 @@ Forked from a self built database to create a billing system suitable for a smal
     
     
 * /user/delete/id - **DELETE**
-  * Accepts customers email as a JSON object and if this matches the one on the file and the customers outstanding balance is equal to or under £5 will delete the customers account permanently.
+  * Accepts customers password as a JSON object and if this matches the one on the file and the customers outstanding balance is equal to or under £5 will delete the customers account permanently.
   * This is non-reversible.
 
 

@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Objects;
 
+
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 
@@ -39,7 +40,8 @@ public class sampleService {
     sampleRepository samplerepository;
 
     //create user
-    public sampleModel createsampleModel(sampleModel info){return samplerepository.save(info);    }
+    public sampleModel createsampleModel(sampleModel info){        
+        return samplerepository.save(info);    }
 
     public List<sampleModel> getsampleModel(){return samplerepository.findAll();}
 
@@ -102,9 +104,7 @@ public class sampleService {
     public void deleteUser(Long id, sampleModel deleteData){
         sampleModel useraccount = samplerepository.findById(id).get();
         if(useraccount.getOutstandingbalance() <= 5){
-            System.out.println(useraccount.getEmail());
-            System.out.println(deleteData.getEmail());
-            if (useraccount.getEmail().equals(deleteData.getEmail())){
+             if (useraccount.getPassword().equals(deleteData.getPassword())){
         samplerepository.deleteById(id);}}
     }
 
