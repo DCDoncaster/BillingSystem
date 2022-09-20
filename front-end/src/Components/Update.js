@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function Update({ setView, setCurrentView }) {
-  const [formInputs, setFormInputs] = useState({});
+function Update({ formInputs, setFormInputs,setView }) {
+  
 
   
   const submitHandler = async (e) => {
@@ -9,13 +9,13 @@ function Update({ setView, setCurrentView }) {
     e.preventDefault();
     try {
       let response = await fetch(
-        `http://localhost:8080/user/create`,
+        `http://localhost:8080/user/update/${formInputs.id}`,
         {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          method: "POST",
+          method: "PUT",
           mode: "cors", 
           body: JSON.stringify(
 
@@ -23,30 +23,32 @@ function Update({ setView, setCurrentView }) {
             ),
         }
       );
-      setView(0);
+      setView(3);
 //Use this to display the account details once submitted
       const data = await response.json();
-      let newObj = {};
+      // let newObj = {};
 
-      setFormInputs(newObj);
+      // setFormInputs(newObj);
     } catch (err) {}
   };
-  const handleCancel = () => {
-    setView(0);
-  };
+
 
   function onChangeHandler(e) {
     let formData = formInputs;
     formData[e.target.name] = e.target.value;
-    formData.outstandingbalance = "0.0"
     setFormInputs(formData);
-    console.log(formData);
+  
   }
 
   return (
-    <div>
-      <h1>Update an Account</h1>
+    <div className="centeredDiv">
+      <h1>Update your information:</h1>
+      <h2>Please enter the details you wish to change below:</h2>
      <form id="createUser" onSubmit={submitHandler}>
+     <p className="pRow">
+        <label className="formCell">Account ID</label>
+        <input className="formCell" name="id" type="text" placeholder="Your Account Number" value={formInputs.id} onChange={onChangeHandler}></input>
+      </p>
       <p className="pRow">
         <label className="formCell">Full Name</label>
         <input className="formCell" name="fullname" type="text" placeholder="Your Full Name" value={formInputs.fullname} onChange={onChangeHandler}></input>
@@ -60,7 +62,7 @@ function Update({ setView, setCurrentView }) {
         <input className="formCell" name="email" type="text" placeholder="email@email.com" value={formInputs.email} onChange={onChangeHandler}></input>
       </p>
       <p className="pRow">
-        <label className="formCell">Opening Reading</label>
+        <label className="formCell">New Reading</label>
         <input className="formCell" name="lastreading" type="text" placeholder="01234" value={formInputs.lastreading} onChange={onChangeHandler}></input>
       </p>
       <p className="pRow">
@@ -69,7 +71,7 @@ function Update({ setView, setCurrentView }) {
       </p>
      </form>
      <p>
-      <button className="formCell" onClick={handleCancel}>Cancel</button>
+      
       <button form="createUser" className="formCell" onClick={submitHandler}>Submit</button>
      </p>
     </div>

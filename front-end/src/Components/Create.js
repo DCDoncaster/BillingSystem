@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function Create({ setView, setCurrentView }) {
-  const [formInputs, setFormInputs] = useState({});
+function Create({ formInputs, setFormInputs,setView }) {
+  
 
   
   const submitHandler = async (e) => {
@@ -23,17 +23,15 @@ function Create({ setView, setCurrentView }) {
             ),
         }
       );
-      setView(0);
+      setView(1);
 //Use this to display the account details once submitted
       const data = await response.json();
-      let newObj = {};
+      // let newObj = {};
 
-      setFormInputs(newObj);
+      // setFormInputs(newObj);
     } catch (err) {}
   };
-  const handleCancel = () => {
-    setView(0);
-  };
+
 
   function onChangeHandler(e) {
     let formData = formInputs;
@@ -44,7 +42,7 @@ function Create({ setView, setCurrentView }) {
   }
 
   return (
-    <div>
+    <div className="centeredDiv">
       <h1>Create an Account</h1>
      <form id="createUser" onSubmit={submitHandler}>
       <p className="pRow">
@@ -69,7 +67,7 @@ function Create({ setView, setCurrentView }) {
       </p>
      </form>
      <p>
-      <button className="formCell" onClick={handleCancel}>Cancel</button>
+      
       <button form="createUser" className="formCell" onClick={submitHandler}>Submit</button>
      </p>
     </div>

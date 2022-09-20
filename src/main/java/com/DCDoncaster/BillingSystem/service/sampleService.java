@@ -35,12 +35,13 @@ public class sampleService {
 
     public static final String ACCOUNT_SID = "ACc9c84b76cf25af228f8dc7dfd7660046";
     public static final String AUTH_TOKEN = " 2bb3f3f50efd379c94b0fe468bf2e0fc";
-    public static double unitRate = 0.2855;
+    public static double unitRate = 0.1;
     @Autowired
     sampleRepository samplerepository;
 
     //create user
-    public sampleModel createsampleModel(sampleModel info){        
+    public sampleModel createsampleModel(sampleModel info){
+
         return samplerepository.save(info);    }
 
     public List<sampleModel> getsampleModel(){return samplerepository.findAll();}
@@ -49,11 +50,13 @@ public class sampleService {
 
     public sampleModel updateSampleModel(Long id, sampleModel dataupdate) throws URISyntaxException {
         //use this to extract a particular value
+
         sampleModel existingdata = samplerepository.findById(id).get();
         if(!Objects.isNull(dataupdate.getEmail())) {existingdata.setEmail(dataupdate.getEmail());}
         if(!Objects.isNull(dataupdate.getPassword())) {existingdata.setPassword(dataupdate.getPassword());}
         if(!Objects.isNull(dataupdate.getFullname())) {existingdata.setFullname(dataupdate.getFullname());}
         if(!Objects.isNull(dataupdate.getPhonenumber())) {existingdata.setPhonenumber(dataupdate.getPhonenumber());}
+
         if(!Objects.isNull(dataupdate.getLastreading())) {
 
             //update outstanding balance
@@ -66,12 +69,12 @@ public class sampleService {
             //update readings database also
 
             var uri = new URI("http://localhost:8080/readings/submit");
-            String test = String.valueOf(existingdata.getId());
+            String userID = String.valueOf(existingdata.getId());
             String reading = String.valueOf(existingdata.getLastreading());
             String insertDate = String.valueOf(LocalDate.now());
             var payload = """
     {"accountnumber":"$ID","reading":"$Reading","date":"$Date"}
-""".replace("$ID",test).replace("$Reading",reading).replace("$Date",insertDate);
+""".replace("$ID",userID).replace("$Reading",reading).replace("$Date",insertDate);
             var client = HttpClient.newHttpClient();
             var request = HttpRequest.newBuilder(uri).POST(BodyPublishers.ofString(payload)).header("Content-type","application/json").build();
             HttpResponse<Void> response = null;
@@ -105,6 +108,14 @@ public class sampleService {
         sampleModel useraccount = samplerepository.findById(id).get();
         if(useraccount.getOutstandingbalance() <= 5){
              if (useraccount.getPassword().equals(deleteData.getPassword())){
+                 Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+                 Message message = Message.creator(
+                                 new com.twilio.type.PhoneNumber("+447784897307"), //this could be set to the phone number of the customer in the database to be more dynamic
+                                 "MGb8c8a0f88021746132fa467d2a859247",
+                                 "Your account number "  + useraccount.getId() + " has been successfully deleted.")
+                         .create();
+                 System.out.println("SMS Successfully Sent");
+                 System.out.println(message.getBody());
         samplerepository.deleteById(id);}}
     }
 

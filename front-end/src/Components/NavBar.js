@@ -14,10 +14,10 @@ function NavBar ({setView, setCurrentView}){
                         <p onClick={()=>{setView(0)}}>Create Account</p>               
                         </li>
                         <li>
-                        <p onClick={()=>{setView(1)}}>Update</p>
+                        <p onClick={()=>{setView(2)}}>Update Details</p>
                         </li>
                         <li>
-                        <p onClick={()=>{setView(2)}}>Delete Account</p>
+                        <p onClick={()=>{setView(4)}}>Delete Account</p>
                         </li>
                     <div className='navBar-btn'>
 

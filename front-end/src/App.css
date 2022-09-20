@@ -31,6 +31,7 @@
   display: table-row;
 }
 .formCell{
+  padding-right: 5px;
   display: table-cell;
 }
 
@@ -124,4 +125,11 @@ li{
 
 ul{
   padding:0;
+}
+
+.centeredDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
