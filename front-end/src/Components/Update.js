@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Update({ formInputs, setFormInputs,setView }) {
+function Update({ formInputs, setFormInputs,setView, setLoggedIn, loggedIn }) {
   
 
   
@@ -26,9 +26,7 @@ function Update({ formInputs, setFormInputs,setView }) {
       setView(3);
 //Use this to display the account details once submitted
       const data = await response.json();
-      // let newObj = {};
 
-      // setFormInputs(newObj);
     } catch (err) {}
   };
 

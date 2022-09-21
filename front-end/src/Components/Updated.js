@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 
-function Updated({ formInputs, setFormInputs,setView, setCurrentView  }) {
+function Updated({ formInputs, setFormInputs,setView, setCurrentView, setLoggedIn, loggedIn  }) {
   
 
   
   const submitHandler = async (e) => {
     
     e.preventDefault();
-    
+// formInputs.fullname ? setLoggedIn.fullname = formInputs.fullname : setLoggedIn.fullname = loggedIn.fullname;    
       setView(0);
       let newObj = {};
-
       setFormInputs(newObj);
-//Use this to display the account details once submitted
   
 
   
   };
 
 let placeholder = formInputs;
+
+
 
   return (
     <div className="centeredDiv">

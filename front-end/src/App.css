@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+body{
+  display: flex;
+  height: 100vh; 
+  margin: 0;
+  flex-direction: column;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -33,6 +39,7 @@
 .formCell{
   padding-right: 5px;
   display: table-cell;
+  
 }
 
 
@@ -50,23 +57,32 @@
 }
 
 footer {
-  background-color: navy;
+  background-color: #eded11;
   margin-top: 100px;
   width: 100vw;
+  position: absolute;
+  bottom: 0;
 }
+
 
 
 
 .footerText {
   text-align: center;
   font-size: large;
-  color: white;
+  color: black;
+  
 }
 
-
+.site-title{
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+  font-style: italic;
+}
 .nav{
-  background-color: navy;
-  color: white;
+  background-color: #eded11;
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -81,12 +97,12 @@ nav{
 
 .nav li:hover{
   /* background-color: #777; */
-  color: orange;
+  color: red;
   
 }
   
 .nav li:active{
-  background-color: navy
+  /* background-color: lightyellow */
 }
 
 .nav a {
@@ -116,7 +132,67 @@ flex-direction: row;
 align-self: center;
 }
 
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: rgb(0, 162, 255);
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
 li{
   list-style: none;
   text-align: center;

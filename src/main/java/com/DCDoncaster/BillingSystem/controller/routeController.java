@@ -29,7 +29,6 @@ public class routeController {
 
     @RequestMapping(value="/create", method=RequestMethod.POST)
     public sampleModel createSampleModel(@RequestBody sampleModel data) {return sampleservice.createsampleModel(data);
-
 }
 
 

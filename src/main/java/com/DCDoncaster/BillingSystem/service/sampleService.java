@@ -48,6 +48,14 @@ public class sampleService {
 
     public Optional<sampleModel> getsampleModelSingle(long id){return samplerepository.findById(id);}
 
+    public sampleModel login(String email, String password){
+        sampleModel user = samplerepository.findByEmail(email).orElse(null);
+        if(user != null && user.getPassword().equals(password)){
+            return user;
+        }
+        return null;
+    }
+    
     public sampleModel updateSampleModel(Long id, sampleModel dataupdate) throws URISyntaxException {
         //use this to extract a particular value
 
@@ -116,7 +124,18 @@ public class sampleService {
                          .create();
                  System.out.println("SMS Successfully Sent");
                  System.out.println(message.getBody());
-        samplerepository.deleteById(id);}}
+        samplerepository.deleteById(id);}
+
+        }else{
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+            Message message = Message.creator(
+                            new com.twilio.type.PhoneNumber("+447784897307"), //this could be set to the phone number of the customer in the database to be more dynamic
+                            "MGb8c8a0f88021746132fa467d2a859247",
+                            "Your account number "  + useraccount.getId() + " not been deleted. This may be due to a number of reasons, please contact us to find out why.")
+                    .create();
+            System.out.println("SMS Successfully Sent");
+            System.out.println(message.getBody());
+        }
     }
 
  }
