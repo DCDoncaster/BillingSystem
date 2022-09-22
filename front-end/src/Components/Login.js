@@ -20,7 +20,7 @@ function Login({ formInputs, setFormInputs,setView, loggedIn, setLoggedIn }) {
   let data = await response.json()
      if (data.password === formInputs.password) {
         setLoggedIn(data);
-        setView(0);
+§§        setView(2);
         setFormInputs({});
       }else{
         setLoggedIn({fullname: "Invalid Login"});
