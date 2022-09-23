@@ -35,10 +35,9 @@ public class sampleService {
 
     public static final String ACCOUNT_SID = "ACc9c84b76cf25af228f8dc7dfd7660046";
     public static final String AUTH_TOKEN = " 2bb3f3f50efd379c94b0fe468bf2e0fc";
-    public static double unitRate = 0.1;
+    public static double unitRate = 0.287;
     @Autowired
     sampleRepository samplerepository;
-
     //create user
     public sampleModel createsampleModel(sampleModel info){
 

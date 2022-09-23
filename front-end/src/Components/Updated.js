@@ -8,7 +8,7 @@ function Updated({ formInputs, setFormInputs,setView, setCurrentView, setLoggedI
     
     e.preventDefault();
 // formInputs.fullname ? setLoggedIn.fullname = formInputs.fullname : setLoggedIn.fullname = loggedIn.fullname;    
-      setView(0);
+      setView(2);
       let newObj = {};
       setFormInputs(newObj);
   
